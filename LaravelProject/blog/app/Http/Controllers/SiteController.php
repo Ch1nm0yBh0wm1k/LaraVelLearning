@@ -7,19 +7,25 @@ use Illuminate\Http\Request;
 class SiteController extends Controller
 {
     //
-    public function home()
+    public function Home()
     {
-       $data = Table::all();
-       return view('HomePage')->with('data',$data);
+        return View('HomePage');
+    //    $data = Table::all();
+    //    return view('HomePage')->with('data',$data);
     }
 
     function About()
     {
-        return "I Am From About Controller";
+        return View('AboutPage');
     }
 
     function Contact()
     {
-        return "I Am From Contact Controller";
+        return View('ContactPage');
     }
+//     <!-- @foreach($data as $dat)
+// {{$dat->id}}
+// @endforeach
+//  -->
+
 }

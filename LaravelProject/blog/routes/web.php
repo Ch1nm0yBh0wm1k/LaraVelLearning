@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\SiteController; 
+use App\Http\Controllers\SiteController;
+use App\Http\Controllers\DemoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,8 +29,11 @@ use App\Http\Controllers\SiteController;
 
 //Now we will try to make a route from controller
 
-Route::get('/', [SiteController::class, 'home']);
-
+Route::get('/', [SiteController::class, 'Home']);
+Route::get('/about', [SiteController::class, 'About']);
+Route::get('/contact', [SiteController::class, 'Contact']);
+// add parameter in route
+Route::get('/name/{id}/{firstName}/{lastname}', [DemoController::class, 'GetName']);
 // Route::get('/about', 'SiteController@About');
 
 // Route::get('/contact', 'SiteController@Contact');
