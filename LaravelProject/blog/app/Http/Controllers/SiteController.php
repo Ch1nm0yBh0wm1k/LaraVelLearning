@@ -13,7 +13,9 @@ class SiteController extends Controller
     //    $data = Table::all();
     //    return view('HomePage')->with('data',$data);
     }
-
+    public function contactPost(Request $req){
+        echo $input1=$req->input('input1');
+    }
     function About()
     {
         return View('AboutPage');
